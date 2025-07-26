@@ -6,7 +6,7 @@ import crypto from 'crypto';
 // Rate limiting: store in memory (use Redis in production)
 const resetAttempts = new Map<string, { count: number; lastAttempt: number }>();
 
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
